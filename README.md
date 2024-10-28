@@ -1,0 +1,21 @@
+CREATE DATABASE phppt1;
+
+USE phppt1;
+
+
+CREATE TABLE Peliculas (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nombre VARCHAR(100) NOT NULL,
+director VARCHAR(100) NOT NULL,
+year VARCHAR(30) NOT NULL,
+sinopsis VARCHAR(500)
+);
+
+CREATE TABLE Cines (
+id INT AUTO_INCREMENT PRIMARY KEY,
+localidad VARCHAR(100) NOT NULL,
+clientes INT NOT NULL,
+peliculas_mostradas INT NOT NULL,
+pelicula_id INT NULL,
+FOREIGN KEY (pelicula_id) REFERENCES Peliculas(id)
+);
